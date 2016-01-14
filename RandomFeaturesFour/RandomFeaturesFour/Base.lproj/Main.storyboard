@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-5p-bw7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-5p-bw7" userLabel="Gender View">
                                 <rect key="frame" x="0.0" y="20" width="320" height="189.5"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OMk-t2-bz4">
@@ -73,20 +73,84 @@
                                     <constraint firstAttribute="bottom" secondItem="OMk-t2-bz4" secondAttribute="bottom" constant="18" id="z1q-99-2Yj"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0P3-Mu-w1p" userLabel="Age View">
+                                <rect key="frame" x="0.0" y="209" width="320" height="189.5"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PEk-Tl-k7w">
+                                        <rect key="frame" x="32" y="141" width="256" height="31"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="ageSliderValueChanged:" destination="o7V-Kg-G46" eventType="valueChanged" id="HfD-3A-NNE"/>
+                                            <action selector="genderSliderValueChanged:" destination="o7V-Kg-G46" eventType="valueChanged" id="YxV-6J-rnU"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwX-DX-W2f">
+                                        <rect key="frame" x="108.5" y="28" width="104" height="24"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIR-0w-bTm">
+                                        <rect key="frame" x="8" y="146" width="22" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnJ-Id-RDZ">
+                                        <rect key="frame" x="294" y="146" width="22" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where on the spectrum are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycM-Qe-0Ty">
+                                        <rect key="frame" x="35" y="92" width="249.5" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="AnJ-Id-RDZ" firstAttribute="leading" secondItem="PEk-Tl-k7w" secondAttribute="trailing" constant="8" id="0ef-nC-WT3"/>
+                                    <constraint firstItem="PEk-Tl-k7w" firstAttribute="top" secondItem="ycM-Qe-0Ty" secondAttribute="bottom" constant="28.5" id="7MK-qO-OBq"/>
+                                    <constraint firstAttribute="bottom" secondItem="PEk-Tl-k7w" secondAttribute="bottom" constant="18" id="ChK-Iw-xrE"/>
+                                    <constraint firstItem="ycM-Qe-0Ty" firstAttribute="centerX" secondItem="PEk-Tl-k7w" secondAttribute="centerX" id="G8w-jS-eHj"/>
+                                    <constraint firstItem="PEk-Tl-k7w" firstAttribute="centerX" secondItem="0P3-Mu-w1p" secondAttribute="centerX" id="P5B-wX-nUe"/>
+                                    <constraint firstItem="AnJ-Id-RDZ" firstAttribute="centerY" secondItem="PEk-Tl-k7w" secondAttribute="centerY" id="dtF-6t-7Pw"/>
+                                    <constraint firstItem="PEk-Tl-k7w" firstAttribute="leading" secondItem="AIR-0w-bTm" secondAttribute="trailing" constant="4" id="jNl-f4-6ST"/>
+                                    <constraint firstItem="AIR-0w-bTm" firstAttribute="centerY" secondItem="PEk-Tl-k7w" secondAttribute="centerY" id="nCh-dl-7p5"/>
+                                    <constraint firstItem="ycM-Qe-0Ty" firstAttribute="top" secondItem="EwX-DX-W2f" secondAttribute="bottom" constant="40" id="ra2-dH-yr6"/>
+                                    <constraint firstItem="PEk-Tl-k7w" firstAttribute="leading" secondItem="0P3-Mu-w1p" secondAttribute="leading" constant="34" id="sGW-31-zib"/>
+                                    <constraint firstItem="EwX-DX-W2f" firstAttribute="centerX" secondItem="ycM-Qe-0Ty" secondAttribute="centerX" id="y2d-vd-mKd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="f5m-5p-bw7" firstAttribute="height" secondItem="y3p-x3-8O7" secondAttribute="height" multiplier="1/3" id="FTr-9M-7DJ"/>
+                            <constraint firstItem="0P3-Mu-w1p" firstAttribute="top" secondItem="f5m-5p-bw7" secondAttribute="bottom" id="HxK-HY-yYL"/>
+                            <constraint firstItem="0P3-Mu-w1p" firstAttribute="width" secondItem="y3p-x3-8O7" secondAttribute="width" id="I3a-Vu-2lv"/>
+                            <constraint firstItem="0P3-Mu-w1p" firstAttribute="height" secondItem="y3p-x3-8O7" secondAttribute="height" multiplier="1/3" id="Iev-1r-Bdh"/>
                             <constraint firstItem="f5m-5p-bw7" firstAttribute="width" secondItem="y3p-x3-8O7" secondAttribute="width" id="J9r-Lc-s5n"/>
                             <constraint firstItem="f5m-5p-bw7" firstAttribute="top" secondItem="HnL-Pm-kmd" secondAttribute="bottom" id="WNy-SD-dsN"/>
                             <constraint firstItem="f5m-5p-bw7" firstAttribute="centerX" secondItem="y3p-x3-8O7" secondAttribute="centerX" id="jum-Bp-0hx"/>
+                            <constraint firstItem="0P3-Mu-w1p" firstAttribute="centerX" secondItem="y3p-x3-8O7" secondAttribute="centerX" id="s44-ZB-c9c"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="ageSlider" destination="PEk-Tl-k7w" id="an2-XJ-HQu"/>
+                        <outlet property="ageSliderValueLabel" destination="ycM-Qe-0Ty" id="jyW-QG-waz"/>
                         <outlet property="genderSlider" destination="OMk-t2-bz4" id="tis-Ip-6Kb"/>
                         <outlet property="genderSliderValueLabel" destination="rub-By-AhU" id="e7S-PM-11L"/>
+                        <outlet property="oldEmojiSliderCap" destination="AnJ-Id-RDZ" id="k4R-GW-9cO"/>
+                        <outlet property="youngEmojiSliderCap" destination="AIR-0w-bTm" id="aKr-qo-hdd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogo-bn-sYN" userLabel="First Responder" sceneMemberID="firstResponder"/>

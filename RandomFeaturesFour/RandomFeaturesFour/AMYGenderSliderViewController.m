@@ -13,6 +13,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *genderSliderValueLabel;
 @property (weak, nonatomic) IBOutlet UISlider *genderSlider;
 
+@property (weak, nonatomic) IBOutlet UILabel *ageSliderValueLabel;
+@property (weak, nonatomic) IBOutlet UISlider *ageSlider;
+@property (weak, nonatomic) IBOutlet UILabel *youngEmojiSliderCap;
+@property (weak, nonatomic) IBOutlet UILabel *oldEmojiSliderCap;
+
 @end
 
 @implementation AMYGenderSliderViewController
@@ -27,6 +32,22 @@
     NSInteger makeNumbersWhole = 10;
     CGFloat genderValue = self.genderSlider.value * makeNumbersWhole;
     self.genderSliderValueLabel.text = [NSString stringWithFormat:@"%f", genderValue];
+    
+    [self changeBackgroundColorWithValue];
+}
+
+- (IBAction)ageSliderValueChanged:(id)sender
+{
+    NSInteger makeNumbersWhole = 10;
+    CGFloat ageValue = self.ageSlider.value * makeNumbersWhole;
+    self.ageSliderValueLabel.text = [NSString stringWithFormat:@"%f", ageValue];
+
+    [self changeBackgroundColorWithValue];
+}
+
+- (void)changeBackgroundColorWithValue
+{
+    self.view.backgroundColor = [UIColor colorWithHue:self.genderSlider.value saturation:self.ageSlider.value brightness:1.0 alpha:1.0];
 }
 
 @end
